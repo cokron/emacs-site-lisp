@@ -1,6 +1,0 @@
-K 13
-svn:externals
-V 61
-emacs-rails-trunk http://emacs-rails.rubyforge.org/svn/trunk
-
-END

@@ -242,7 +242,8 @@ rails-goto-file-on-current-line is run.")
                                       (name 2)))
   (rails-core:find-or-ask-to-create
    (format "Partial \"%s\" does not exist do you whant to create it? " name)
-   (rails-core:partial-name name)))
+   (rails-core:partial-name-haml name)))
+;BG 20090420 oben partial-name-haml
 
 (def-goto-line rails-line-->action (("\\([ ]*render\\|replace_html\\|insert_html\\).*:action[ ]*=>[ ]*[\"'\:]\\([^\"']*\\)"
                                      (name 2)))

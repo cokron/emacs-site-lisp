@@ -406,6 +406,8 @@
 (setq auto-mode-alist
   (cons '("\\.css\\'" . css-mode) auto-mode-alist))
 
+; 2009-04-17 SASS
+(require 'sass-mode)
 ;Coding
 
 ;25.08.2006 Ruby on Rails
@@ -447,8 +449,8 @@
 
 ; 22.08.2007 maximize on startup
 ;
-(require 'maxframe)
-(add-hook 'window-setup-hook 'maximize-frame t)
+;(require 'maxframe)
+;(add-hook 'window-setup-hook 'maximize-frame t)
 ;oder
 ;(set-frame-height (selected-frame) 40)
 ;(set-frame-width (selected-frame) 80)
@@ -595,3 +597,6 @@
 ;(global-set-key "\M-v" 'rails-find:view)
 ;(global-set-key "\M-m" 'rails-nav:goto-models)
 ;(global-set-key "\M-c" 'rails-nav:goto-controllers)
+
+;2009-04-21
+(require 'textmate-links)

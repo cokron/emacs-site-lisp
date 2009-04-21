@@ -240,6 +240,14 @@ it does not exist, ask to create it using QUESTION as a prompt."
     (concat (rails-core:views-dir (rails-core:current-controller))
       "_" name ".html.erb")))
 
+(defun rails-core:partial-name-haml (name)
+  "Return the file name of partial NAME."
+  (if (string-match "/" name)
+      (concat "app/views/"
+        (replace-regexp-in-string "\\([^/]*\\)$" "_\\1.html.haml" name))
+    (concat (rails-core:views-dir (rails-core:current-controller))
+      "_" name ".html.haml")))
+
 (defun rails-core:view-name (name)
   "Return the file name of view NAME."
   (concat (rails-core:views-dir (rails-core:current-controller))

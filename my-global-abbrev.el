@@ -9,7 +9,22 @@
 ;  ("frm"     "<%= error_messages_for :$${item} %>\n<fieldset>\n   <legend>$${Titel des Formulars}</legend>\n   <% form_for ($${[:mutterklasse, }@$${item}$${]}) do |form| %>\n\n\n\n      <%= form.submit '$${Save}', :class => 'submit' %>\n   <% end %>\n</fieldset>" "default form")
 
 
-  ("frm" "<% error_handling_form_for(@$${model}, :title => t(\"$${title}\")) do |f| -%> \n  <%= f.error_messages %>\n\n  <%= f.submit t('general.forms.update'), :class => 'submit', :accesskey => 's', :title => 'Ctrl+s' %> \n<% end -%>\n\n"    "default form")
+;  ("frm" "<% error_handling_form_for(@$${model}, :title => t(\"$${title}\")) do |f| -%> \n  <%= f.error_messages %>\n\n  <%= f.submit t('general.forms.update'), :class => 'submit', :accesskey => 's', :title => 'Ctrl+s' %> \n<% end -%>\n\n"    "default form")
+  ("frm" "
+#form
+  %h1 h1
+  %h2 h2
+  %p.quiet
+    erklaerung
+  
+  - error_handling_form_for(@$${model}, :title => t(\".create_$${model}\")) do |f|
+    = f.error_messages
+    - f.fields_for :${{model}} do |p| 
+
+
+    %div.submit
+      = f.submit t('general.forms.save'), :class => 'submit', :accesskey => 's', :title => 'Ctrl+s'
+"    "default form")
 
 
   ;("tb"      "      <label for =\"$${feldname}\">$${Beschriftung}:</label><%= form.text_field :$${feldname} %><br/>\n" "text box")

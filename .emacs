@@ -576,6 +576,7 @@
 
 
 (setq default-directory "/Volumes/Projekte")
+;(setq default-directory "/Users/bjoern/Desktop/Rails/")
 
 
 
